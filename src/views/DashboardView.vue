@@ -2,7 +2,7 @@
   <div>
     <div class="row">
 <div class="col-md-12 mb-4">
-  <div class="card text-bg-dark h-100 border-secondary">
+  <div class="card text-bg-dark h-100">
     <!-- Aplicamos las clases flex aquí -->
     <div class="card-body d-flex align-items-center justify-content-between">
       
@@ -20,7 +20,7 @@
       
 <!-- Tarjeta Resumen -->
       <div class="col-md-6 mb-4">
-        <div class="card text-bg-dark h-100 border-secondary">
+        <div class="card text-bg-dark h-100">
           
           <div class="mx-3 my-3 d-flex justify-content-between align-items-center texto_secundario">
             <div>
@@ -50,8 +50,8 @@
 
       <!-- Tarjeta de los Gráficos Sincronizados -->
       <div class="col-md-6 mb-4 texto_secundario">
-        <div class="card text-bg-dark border-secondary">
-          <div class="card-header border-secondary">
+        <div class="card text-bg-dark">
+          <div class="card-header">
             Tendencia Dual: Temperatura y Humedad
           </div>
           <div class="card-body">
@@ -77,8 +77,8 @@
       </div>
 
       <div class="col-md-8 mb-4 texto_secundario">
-      <div class="card text-bg-dark border-secondary">
-      <div class="card-header border-secondary">
+      <div class="card text-bg-dark">
+      <div class="card-header">
           Precipitaciones Acumuladas
       </div>
       <apexchart 
@@ -91,8 +91,8 @@
       </div>
 
       <div class="col-md-8 mb-4 texto_secundario">
-      <div class="card text-bg-dark border-secondary">
-      <div class="card-header border-secondary">
+      <div class="card text-bg-dark">
+      <div class="card-header">
           Mapa de alertas
       </div>
       <apexchart 
