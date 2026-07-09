@@ -17,7 +17,7 @@
     </div>
 
     <div class="offcanvas-body d-flex flex-column h-100 p-3 pt-lg-4">
-      <h3 class="mb-4 text-white titulo_principal d-none d-lg-block">KlimaTrack</h3>
+      <h2 class="mb-4 text-white titulo_principal d-none d-lg-block color-gradiente">KlimaTrack</h2>
       <hr class="text-info d-none d-lg-block mt-0" />
 
       <ul class="nav flex-column texto_secundario fw-bold">
@@ -29,7 +29,7 @@
             @click="cerrarMenu"
           >
             Dashboard
-          </RouterLink>
+          </RouterLink> 
         </li>
         <li class="nav-item mb-2">
           <RouterLink
@@ -63,12 +63,14 @@
         </li>
       </ul>
 
-      <div class="usuario-sidebar mt-auto">
+      <div class="usuario-sidebar mt-auto dropup">
         <hr class="text-info mt-0 mb-3" />
+
         <button
           class="btn dropdown-toggle usuario-btn w-100 text-start text-white"
+          :class="{ show: mostrarMenuUsuario }"
           type="button"
-          data-bs-toggle="dropdown"
+          @click="mostrarMenuUsuario = !mostrarMenuUsuario"
         >
           <div class="d-flex align-items-center gap-2">
             <div class="avatar-sidebar">
@@ -78,9 +80,11 @@
           </div>
         </button>
 
-        <ul class="dropdown-menu">
+        <ul class="dropdown-menu shadow w-100 menu-arriba" :class="{ show: mostrarMenuUsuario }">
           <li>
-            <button @click="ejecutarLogout" class="dropdown-item">Cerrar sesión</button>
+            <button @click="ejecutarLogout" class="dropdown-item text-danger fw-bold">
+              Cerrar sesión
+            </button>
           </li>
         </ul>
       </div>
@@ -89,14 +93,15 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue' // Agregamos ref y onMounted
+import { ref, onMounted } from 'vue'
 import { authService } from '@/services/authService'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
-
-// 1. Creamos la variable reactiva con un texto por defecto
 const nombreUsuario = ref('Cargando...')
+
+// NUEVA VARIABLE PARA CONTROLAR EL MENÚ
+const mostrarMenuUsuario = ref(false)
 
 // 2. Creamos la función para pedir los datos
 const obtenerDatosUsuario = async () => {
@@ -158,7 +163,6 @@ li:hover {
   background-color: var(--color-primario);
 }
 
-
 .avatar-sidebar {
   width: 40px;
   height: 40px;
@@ -168,5 +172,11 @@ li:hover {
   align-items: center;
   justify-content: center;
   color: white;
+}
+
+.menu-arriba {
+  top: auto !important;
+  bottom: 100% !important;
+  margin-bottom: 0.5rem;
 }
 </style>

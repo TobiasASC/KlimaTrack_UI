@@ -9,6 +9,7 @@ import Register from '../views/Register.vue'
 import Perfil from '../views/Perfil.vue'
 import Ubicaciones from '../views/Ubicaciones.vue'
 
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [

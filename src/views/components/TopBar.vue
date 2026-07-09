@@ -29,7 +29,6 @@
     <RouterLink to="/ubicaciones"><i class="bi bi-pencil-fill text-secondary fs-4"></i></RouterLink>
     </div>
     
-
         <a href="#" class="text-light" style="cursor: pointer;">
             <i class="bi bi-bell-fill icono-topbar"></i>
         </a>
@@ -65,10 +64,14 @@ const nombreSeccion = computed(() => {
 
 /* Efecto hover suave para el icono */
 .icono-topbar:hover {
-  opacity: 0.8;
+  transition: 0.3s;
+  color: var(--color-primario);
 }
+
+.icono-topbar:hover{ transform: scale(1.05);}
 
 .fondo-topbar{
   background-color: var(--fondo-body);
 }
+
 </style>

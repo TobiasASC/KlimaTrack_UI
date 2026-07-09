@@ -7,12 +7,18 @@
         class="flex-grow-1 d-flex flex-column"
         :class="{ 'margen-sidebar': !route.meta.requiresAuthLayout }"
       >
-      <button class="btn text-white d-lg-none me-3 fs-3 p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral" aria-controls="menuLateral">
-  <i class="bi bi-list"></i>
-</button>
+        <button
+          class="btn text-white d-lg-none me-3 fs-3 p-0"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#menuLateral"
+          aria-controls="menuLateral"
+        >
+          <i class="bi bi-list"></i>
+        </button>
         <TopBarView v-if="!route.meta.requiresAuthLayout" />
 
-        <main class="flex-grow-1 p-4 pb-5 estilo-fondo">
+        <main class="flex-grow-1 p-4 pb-5 estilo-fondo animacion">
           <RouterView />
         </main>
       </div>
@@ -33,7 +39,7 @@ const route = useRoute()
 <style>
 :root {
   --fondo-body: #2b333b;
-  --color-primario: #0474c4;
+  --color-primario: #65befd;
   --color-secundario: #6b7179;
 }
 
@@ -47,6 +53,34 @@ const route = useRoute()
     margin-left: 250px;
   }
 }
+
+.animacion {
+  animation: fadeUp 0.5s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.color-gradiente{/* Ajusta el tamaño a tu gusto */
+  
+background: -webkit-linear-gradient(90deg, #ffffff,#9fdef9,#087efd);
+background: linear-gradient(90deg, #ffffff,#9fdef9,#087efd);
+  
+  /* Truco para recortar el color dentro del texto */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Respaldo para navegadores antiguos */
+}
+
 </style>
 
 <!--Style scoped solo estila a los elementos de este componente-->

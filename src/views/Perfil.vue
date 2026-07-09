@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container animacion">
     <div class="row">
       <div class="col-md-12 mb-4">
         <div class="card text-bg-dark h-200 rounded-4">
@@ -53,18 +53,26 @@
           </div>
         </div>
       </div>
-
+      
+      <div class="row">
       <div class="col-md-12 mb-4">
         <div class="card text-bg-dark h-200 rounded-4">
           <div class="card-body d-flex flex-column justify-content-center">
             <h2 class="card-title texto_secundario">Preferencias</h2>
+            <div class="col-md-6 mb-4">
+            <div class="form-check form-switch fs-4 mb-0">
+              <!-- mb-0 elimina margen extra -->
+              <label class="form-check-label fs-4" for="interruptor">Notificaciones</label>
+              <input class="form-check-input" type="checkbox" role="switch" id="interruptor" />
+            </div>
+          </div>
+            <div class="col-md-6">
             <div class="dropdown">
               <button
                 class="btn btn-secondary dropdown-toggle"
                 type="button"
                 data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
+                aria-expanded="false">
                 Canal de notificación
               </button>
               <ul class="dropdown-menu">
@@ -74,10 +82,12 @@
               </ul>
             </div>
           </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <style scoped>

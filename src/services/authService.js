@@ -13,8 +13,8 @@ export const authService = {
         return response.data
     },
 
-    logout() {
-        api.post('/logout')
+    async logout() {
+        await api.post('/logout')
         localStorage.removeItem('token')
     },
 

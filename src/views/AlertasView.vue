@@ -1,11 +1,12 @@
 <template>
     <div class="container">
+      <div class="animacion">
         <div class="row">
         <div class="col-md-12 mb-4">
         <div class="card text-bg-dark h-100 rounded-4">
           <div class="card-body d-flex flex-column justify-content-center">
-            <h2 class="card-title texto_secundario">Añade el destino de tu alerta</h2>
-            <p class="card-text opacity-50">Selecciona el medio de notificación para las alertas</p>
+            <h2 class="card-title texto_secundario">Administra tus alertas</h2>
+            <p class="card-text opacity-50">Aqui veras todo lo relacionado a alertas</p>
           </div>
         </div>
         </div>
@@ -116,6 +117,7 @@
       </div>
 
       <button type="button" class="btn btn-secondary boton-custom"><i class="bi bi-plus"></i>Nueva alerta</button>
+      </div>
     </div>
 
 
